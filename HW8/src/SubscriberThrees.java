@@ -1,9 +1,9 @@
 
-public class SubscriberThrees implements Observer {
+public class SubscriberThrees implements ObserverInterface {
 
-	public boolean notifyobserver(Event E) {
+	public boolean notifyObserver(Event E) {
 		// TODO Auto-generated method stub
-		Observer Threes = new SubscriberThrees();
+		ObserverInterface Threes = new SubscriberThrees();
 		PublisherImplementation pub =new PublisherImplementation();
 		int three_count=0;
 		int eventdata = E.getEventData();
@@ -17,10 +17,20 @@ public class SubscriberThrees implements Observer {
 		
 		if(three_count>=12)
 		{
-			pub.removeObserver(Threes);
+			pub.unregisterMe(Threes);
 			three_count = 0;
 		}	
 
+		return false;
+	}
+
+	public boolean unregisterMe(PublisherImplementation P) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean test(boolean tree) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 

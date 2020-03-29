@@ -1,10 +1,10 @@
-public class SubscriberOdds implements Observer {
+public class SubscriberOdds implements ObserverInterface {
 	int odd_count = 0;
 	
-	public boolean notifyobserver(Event E) {
+	public boolean notifyObserver(Event E) {
 		// TODO Auto-generated method stub
 		PublisherImplementation pub =new PublisherImplementation();
-		Observer Odds= new SubscriberOdds();
+		ObserverInterface Odds= new SubscriberOdds();
 		int eventdata = E.getEventData();
 		if(eventdata%2 == 1)
 		{
@@ -14,10 +14,20 @@ public class SubscriberOdds implements Observer {
 			System.out.println(odd_count);
 			if(odd_count > 15)
 			{
-				pub.removeObserver(Odds);
+				pub.unregisterMe(Odds);
 				odd_count = 0;
 			}
 		}
+		return false;
+	}
+
+	public boolean unregisterMe(PublisherImplementation P) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean test(boolean tree) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 

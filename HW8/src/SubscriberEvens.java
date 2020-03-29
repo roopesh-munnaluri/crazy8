@@ -1,6 +1,6 @@
-public class SubscriberEvens implements Observer {
+public class SubscriberEvens implements ObserverInterface {
 
-	public boolean notifyobserver(Event E) {
+	public boolean notifyObserver(Event E) {
 		// TODO Auto-generated method stub
 		
 		int eventdata = E.getEventData();
@@ -13,6 +13,16 @@ public class SubscriberEvens implements Observer {
 		}
 		return false;
 		
+	}
+
+	public boolean unregisterMe(PublisherImplementation P) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean test(boolean tree) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 	

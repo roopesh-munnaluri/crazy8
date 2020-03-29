@@ -5,28 +5,25 @@ public class PublisherImplementation implements PublisherInterface{
 	public PublisherImplementation()
 	{}
 	
-	private List<Observer> subscribers = new ArrayList<Observer>();
+	private List<ObserverInterface> subscribers = new ArrayList<ObserverInterface>();
 
-	public void registerObserver(Observer O) {
+	public String registerObserver(ObserverInterface O) {
 		// TODO Auto-generated method stub
 		 subscribers.add(O);
-		 System.out.println("The observer is added");
-		
-		
+		 System.out.println("The observer is added");		
+		 return "The observer is added";
 	}
 	
-	public void notifyObservers(Observer O) {
-		// TODO Auto-generated method stub
+	
+	public String notifyObservers(ObserverInterface O) {
 		
+		return "Observer is notified";
 	}
 
 
-	public void removeObserver(Observer O) {
+	public String removeObserver(ObserverInterface O) {
 		// TODO Auto-generated method stub
-		
-		subscribers.remove(O);
-		System.out.println("Observer removed");
-		
+		return "Observer Removed";
 	}
 
 
@@ -38,13 +35,12 @@ public class PublisherImplementation implements PublisherInterface{
 		return e;
 	}
 		
-	
 	public void runsimulation()
 	{
 		PublisherImplementation pub =new PublisherImplementation();
-		Observer Odds= new SubscriberOdds();
-		Observer Evens = new SubscriberEvens();
-		Observer Threes = new SubscriberThrees();
+		ObserverInterface Odds= new SubscriberOdds();
+		SubscriberEvens Evens = new SubscriberEvens();
+		SubscriberThrees Threes = new SubscriberThrees();
 		
 		pub.registerObserver(Odds);
 		pub.registerObserver(Evens);
@@ -54,16 +50,16 @@ public class PublisherImplementation implements PublisherInterface{
 			Event event_random = pub.generateevent(i);
 			if(pub.subscribers.contains(Odds))
 			{	
-			 Odds.notifyobserver(event_random);
+			 Odds.notifyObserver(event_random);
 			}
 			
 			if(pub.subscribers.contains(Threes))
 			{	
-			 Threes.notifyobserver(event_random);
+			 Threes.notifyObserver(event_random);
 			} 
 			if(pub.subscribers.contains(Evens))
 			{	
-			 Evens.notifyobserver(event_random);
+			 Evens.notifyObserver(event_random);
 			} 
 	
 			if(i==40 || i==80 || i==120 || i==160 || i==200)
@@ -78,5 +74,12 @@ public class PublisherImplementation implements PublisherInterface{
 					}
 			    }
 		}		
+	}
+
+	public void unregisterMe(ObserverInterface O) {
+		// TODO Auto-generated method stub
+		subscribers.remove(O);
+		System.out.println("Observer removed");
+		
 	}
 }
