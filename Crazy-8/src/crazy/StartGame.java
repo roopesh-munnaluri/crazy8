@@ -7,9 +7,12 @@ public class StartGame {
 
 
 	  public static void main(String[] args) {
+		  
+		  int k = 1;
 
 	    GameSteps game = new GameSteps();
 	    Scanner in = new Scanner(System.in);
+	    while(k == 1) {
 	        System.out.println(" CRAZY 8'S");
 	        System.out.println();
 	        System.out.println("Enter number of players: ");
@@ -35,12 +38,24 @@ public class StartGame {
 	        AllPlayers player = game.getPlayer(0);
 	        while (!game.isDone()) {
 	        	game.displayState();
-	        	game.waitForUser();
 	        	game.takeTurn(player);
 	          player = game.nextPlayer(player);
 	        }
-	     in.close();
+
+	        for (int x = 0; x < players; x++) {
+	            game.getPlayer(x).displayScore();
+	          }
+	        
+	        System.out.println("------------------------------------ ");
+	        
+	        System.out.println("Press 1 to play new game ");
+	        System.out.println("press 2 to exit");
+	        k = in.nextInt();
 
 	  }
+	    System.out.println("Thanks for playing");
+        
+	    in.close();
+	}
 
 }

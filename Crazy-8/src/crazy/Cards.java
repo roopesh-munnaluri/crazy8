@@ -3,15 +3,16 @@ package crazy;
 public class Cards {
 	
 	String[] Ranks = {
-		      "Ace", "2", "3", "4", "5", "6", "7",
+		      "","Ace", "2", "3", "4", "5", "6", "7",
 		      "8", "9", "10", "Jack", "Queen", "King"};
-	String[] Suits = {
+	public String[] Suits = {
 		      "Clubs", "Diamonds", "Hearts", "Spades"};
 
 	int rank;
 	int suit;
 
 		  public Cards(int rank, int suit) {
+
 		    this.rank = rank;
 		    this.suit = suit;
 		  }

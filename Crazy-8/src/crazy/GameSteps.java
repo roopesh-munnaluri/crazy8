@@ -79,6 +79,7 @@ public class GameSteps {
     MatchCards prev = new MatchCards(0, 0);
     return prev.convert(convert);
   }
+  
   public AllPlayers nextPlayer(AllPlayers current) {
     if (getPlayerIndex(current) < players.size() - 1) {
       return getPlayer(getPlayerIndex(current) + 1);
@@ -88,6 +89,7 @@ public class GameSteps {
     }
     return null;
   }
+  
   public void displayState() {
     for (int x = 0; x < players.size(); x++) {
       getPlayer(x).display();
@@ -96,9 +98,11 @@ public class GameSteps {
     System.out.print("Draw pile: ");
     System.out.println(drawPile.size() + " cards");
   }
+  
   public void waitForUser() {
     in.nextLine();
   }
+
   public void takeTurn(AllPlayers player) {
     Cards convert = discardPile.last();
     MatchCards prev = new MatchCards(0, 0);
