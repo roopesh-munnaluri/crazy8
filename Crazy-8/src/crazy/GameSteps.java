@@ -103,15 +103,25 @@ public class GameSteps {
     in.nextLine();
   }
 
-  public void takeTurn(AllPlayers player) {
-    Cards convert = discardPile.last();
-    MatchCards prev = new MatchCards(0, 0);
+	public void takeTurn(AllPlayers player) {
+		   
+	Cards convert = discardPile.last();
+    MatchCards prev = new MatchCards(convert.getRank(), convert.getSuit());
     prev = prev.convert(convert);    
     MatchCards next = player.play(this, prev);
-    if(next != null)
+    if(next != null && next.getRank()==8)
     {
-    discardPile.addCard(next);
+    	int suit;
+    	System.out.println("Enter the suit you want to choose");
+    	System.out.println("1. Clubs 2. Diamonds 3. Hearts 4. Spades");
+    	suit = in.nextInt()-1;
+    	next.suit = suit;
+    	discardPile.addCard(next);
     }
+    if(next != null && next.getRank()!=8) {
+    	discardPile.addCard(next);
+    }
+    
     System.out.println(player.getName() + " plays " + next);
     System.out.println();
   }  

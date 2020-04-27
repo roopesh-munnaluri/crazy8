@@ -29,10 +29,6 @@ public class Cards {
 		    return Ranks[rank] + " of " + Suits[suit]; 
 		  }
 
-		  public boolean equals(Cards that) {
-		    return rank == that.rank
-		        && suit == that.suit;
-		  }
 
 		  public static void printDeck(Cards[] cards) {
 		    for (int i = 0; i < cards.length; i++) {
