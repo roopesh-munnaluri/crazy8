@@ -30,7 +30,7 @@ public class Board_Welcome extends JPanel
     b.setFocusPainted(false);
     b.addActionListener((ActionListener) new ActionListener() { 
         public void actionPerformed(ActionEvent e) { 
-            new Choose_Player();
+            new ChoosePlayer();
             f.setVisible(false);
         } 
     });

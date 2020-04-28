@@ -26,10 +26,10 @@ public class AllPlayers extends Player {
 		  
 		  Cards card = null;
 		  System.out.println(getName() + " Enter index of the card to discard");
-		  System.out.println("PRESS 9 To pic a card");
+		  System.out.println("PRESS 0(zero) To pic a card");
 		  int i = in.nextInt();
 		  while(card == null) {
-		  if(i == 9 )
+		  if(i == 0 )
 		  { return null;}
 		  else
 		  {
