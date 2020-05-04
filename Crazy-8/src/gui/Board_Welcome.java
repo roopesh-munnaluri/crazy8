@@ -4,10 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 
 public class Board_Welcome extends JPanel 
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Board_Welcome() 
 	{
 	
@@ -46,8 +49,4 @@ public class Board_Welcome extends JPanel
     f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     f.setVisible(true);
   }
-public static void main(String[] args) 
-{
-	Board_Welcome b = new Board_Welcome();  
- }
 }

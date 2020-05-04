@@ -4,8 +4,9 @@ import java.util.Random;
 
 public class CollectionOfCards {
 
-  private String label;
-  private ArrayList<Cards> cards;
+  String label;
+  ArrayList<Cards> cards;
+  
 
  
   public CollectionOfCards(String label) {
@@ -90,6 +91,7 @@ public class CollectionOfCards {
     System.out.println(label + ": ");
     for (Cards card: cards) {
       System.out.println(card);
+      
     }
     System.out.println();
   }

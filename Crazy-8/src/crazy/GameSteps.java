@@ -1,4 +1,5 @@
 package crazy;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,8 +8,10 @@ public class GameSteps {
   public CollectionOfCards drawPile;
   public CollectionOfCards discardPile;
   public Scanner in;
+  String name;
   public ArrayList<AllPlayers> players;
-
+  public ArrayList<String> player_names = new ArrayList<String>(7);
+  
   public GameSteps() {
 	DeckOfCards deck = new DeckOfCards("Deck");
     deck.shuffle();
@@ -26,14 +29,21 @@ public class GameSteps {
 
   public String playerName() {
     System.out.println("Enter player name: ");
-    String name = in.next();
+    name = in.next();
     while (name == "") {
       name = in.nextLine();
     }
+    while(player_names.contains(name)) {
+    	System.out.println("Name already used");
+    	System.out.println("Try other one!!");
+        System.out.println("Enter player name: ");
+    	name = in.next();
+    }
+    player_names.add(name);
     return name;
   }
 
-  public void twoPlayers() {
+  public void twoPlayers() throws IOException {
 	  AllPlayers player = new AllPlayers(playerName());
     createPlayer(player);
     drawPile.deal(player.getHand(), 7);
