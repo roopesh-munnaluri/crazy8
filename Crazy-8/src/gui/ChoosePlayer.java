@@ -16,12 +16,13 @@ public class ChoosePlayer extends JPanel{
 	  /**
 	 * 
 	 */
+	StartGame sg = new StartGame(); 
 	private static final long serialVersionUID = 1L;
 	BufferedImage bi = null;
 	  static int players=0;
 	  ChoosePlayer(){
 	    try{
-	      bi = ImageIO.read(new File("C:\\Users\\roope\\Desktop\\background.png"));
+	      bi = ImageIO.read(new File("C:\\Users\\roope\\Desktop\\background.gif"));
 	      JFrame f = new JFrame();
 	      f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	      MyJPanel panel = new MyJPanel();
@@ -36,6 +37,7 @@ public class ChoosePlayer extends JPanel{
 		            try {
 						new TwoPlayerGUI();
 						players = 2;
+						sg.enterPlayers();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

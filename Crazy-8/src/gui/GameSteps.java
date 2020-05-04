@@ -28,6 +28,8 @@ public class GameSteps {
   }
 
   public String playerName() {
+	  
+	  new Player_Name();
     System.out.println("Enter player name: ");
     name = in.next();
     while (name == "") {

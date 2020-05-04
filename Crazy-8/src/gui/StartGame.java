@@ -7,11 +7,43 @@ import java.util.Scanner;
 public class StartGame {
 
 	  static int players;
-
-	  public static void main(String[] args) throws IOException {
-		  
 	    GameSteps game = new GameSteps();
 	    Scanner in = new Scanner(System.in);
+
+
+	  public void enterPlayers() throws IOException {
+		    players = ChoosePlayer.players;
+		    System.out.println(players);
+		        if(players==2) {
+		        for (int i = 0; i < players; i++) {
+		        	game.twoPlayers();      	
+		        }
+		        }
+		        else {
+		        	for (int i = 0; i < players; i++) {
+			        	game.morePlayers();
+			        }	
+		        }
+		        
+		        AllPlayers player = game.getPlayer(0);
+		        while (!game.isDone()) {
+		        	game.displayState();
+		    	    System.out.println(Cards.ar);
+		        	game.takeTurn(player);
+		          player = game.nextPlayer(player);
+		        }
+
+		        for (int x = 0; x < players; x++) {
+		            game.getPlayer(x).displayScore();
+		          }
+		        
+		        in.close();
+
+		  
+	  }
+	  
+	  public static void main(String[] args) throws IOException {
+		  
 	    new Board_Welcome();
 	    System.out.println("Hello1");
 	    
@@ -32,32 +64,6 @@ public class StartGame {
 		 * false; } catch (NumberFormatException e) { System.out.println("Try Again!!");
 		 * } } }
 		 */
-	    players = ChoosePlayer.players;
-	    System.out.println(players);
-	        if(players==2) {
-	        for (int i = 0; i < players; i++) {
-	        	game.twoPlayers();      	
-	        }
-	        }
-	        else {
-	        	for (int i = 0; i < players; i++) {
-		        	game.morePlayers();
-		        }	
-	        }
-	        
-	        AllPlayers player = game.getPlayer(0);
-	        while (!game.isDone()) {
-	        	game.displayState();
-	    	    System.out.println(Cards.ar);
-	        	game.takeTurn(player);
-	          player = game.nextPlayer(player);
-	        }
-
-	        for (int x = 0; x < players; x++) {
-	            game.getPlayer(x).displayScore();
-	          }
-	        
-	        in.close();
 	        
 	}
 
