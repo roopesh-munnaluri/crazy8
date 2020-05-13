@@ -65,25 +65,7 @@ public class ChoosePlayer extends JPanel{
 		        } 
 		    });
 		    panel.add(b1);
-		    
-		    JButton b2=new JButton("7-Player");
-		    b2.setFont(new Font("ARIAL", Font.PLAIN, 15));
-		    b2.setPreferredSize(new Dimension(100,35));
-		    b2.setBounds(new Rectangle(new Point(350, 350), b2.getPreferredSize()));
-		    b2.setFocusPainted(false);
-		    b2.addActionListener((ActionListener) new ActionListener() { 
-		        public void actionPerformed(ActionEvent e) { 
-		            try {
-						new TwoPlayerGUI();
-						players = 7;
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
-		            f.setVisible(false);
-		        } 
-		    });
-		    panel.add(b2);
+
 
 	      
 	      

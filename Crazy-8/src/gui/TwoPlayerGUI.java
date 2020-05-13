@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 
 public class TwoPlayerGUI {
 	TwoPlayerGUI() throws IOException{
-		System.out.println("Hello");
 		JFrame f= new JFrame("Crazy8");
 		JPanel panel = new JPanel(null);
 	    panel.setBackground(new Color(0x088A4B));
@@ -24,7 +23,6 @@ public class TwoPlayerGUI {
 		    button.setPreferredSize(new Dimension(73,97));
 		    button.setBounds(new Rectangle(new Point(250, 450), button.getPreferredSize()));
 		    panel.add(button);
-		    
 	    }
 	    BufferedImage myPicture1 = ImageIO.read(new File("C:\\Users\\roope\\eclipse-workspace1\\Crazy-8\\src\\images\\2 of Clubs.gif"));
 	    JButton button1 = new JButton(new ImageIcon(myPicture1));
@@ -45,5 +43,8 @@ public class TwoPlayerGUI {
 	    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    f.setVisible(true);
 	}
+	public static void main(String[] args) throws IOException {
+		new TwoPlayerGUI();
+	}
 	
-	 }
+}

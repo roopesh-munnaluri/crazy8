@@ -28,25 +28,14 @@ public class GameSteps {
   }
 
   public String playerName() {
-	  
-	  new Player_Name();
-    System.out.println("Enter player name: ");
-    name = in.next();
-    while (name == "") {
-      name = in.nextLine();
-    }
-    while(player_names.contains(name)) {
-    	System.out.println("Name already used");
-    	System.out.println("Try other one!!");
-        System.out.println("Enter player name: ");
-    	name = in.next();
-    }
-    player_names.add(name);
-    return name;
+	  String player;
+	  Player_Name pn = new Player_Name();
+	  player = pn.getPlayer();	
+	return player;
   }
 
   public void twoPlayers() throws IOException {
-	  AllPlayers player = new AllPlayers(playerName());
+	AllPlayers player = new AllPlayers(playerName());
     createPlayer(player);
     drawPile.deal(player.getHand(), 7);
   }

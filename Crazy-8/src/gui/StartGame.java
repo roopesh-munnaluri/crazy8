@@ -45,7 +45,6 @@ public class StartGame {
 	  public static void main(String[] args) throws IOException {
 		  
 	    new Board_Welcome();
-	    System.out.println("Hello1");
 	    
 		/*
 		 * boolean check_number = true; boolean re_check_number = true;

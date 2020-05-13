@@ -28,10 +28,9 @@ public class Cards {
 		    return suit;
 		  }  
 
-		  public String toString() {
+		  public void tostring() {
 			  String card_names = Ranks[rank] + " of " + Suits[suit];
 			  ar.add(card_names);
-		    return card_names; 
 		  }
 
 
